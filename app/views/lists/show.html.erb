@@ -1,20 +1,20 @@
 
 <h1><%= @list.name  %></h1>
-<div class="position-relative pb-5 mb-5">
-<div class= "cards">
+<div class="position-relative pb-5 mb-5 container ">
+<div class= "cards row">
 <% @list.bookmarks.each do |bookmark| %>
-<div class="card-trip">
+<div class="card-trip position-relative">
  <%= image_tag bookmark.movie.poster_url, alt: "Le Wagon" %>
-  <div class="card-trip-infos">
+  <div class="card-trip-infos mt-3 col-4 ">
     <div>
       <h2><%= bookmark.movie.title %></h2>
       <p><%= bookmark.movie.overview %></p>
     </div>
     <h2 class="card-trip-pricing"><%= bookmark.movie.rating %></h2>
-    <%= link_to "Delete",
-  bookmark_path(bookmark),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
   </div>
+  <%= link_to "❌",
+  bookmark_path(bookmark),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "movie-delete-btn position-absolute top-0 end-0"%>
   </div>
   <% end %>
 </div>
