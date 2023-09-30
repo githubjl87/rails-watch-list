@@ -1,18 +1,22 @@
 
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
-<ul class="list-group">
-  <% @list.bookmarks.each do |bookmark| %>
-  <%= image_tag bookmark.movie.poster_url, alt: "Le Wagon", width: 200 %>
-    <li><%= bookmark.movie.title %></li>
-        <li><%= bookmark.movie.overview %></li>
-        <li><%= bookmark.movie.rating %></li>
-        <%= link_to "Delete",
+<h1><%= @list.name  %></h1>
+<div class="position-relative pb-5 mb-5">
+<div class= "cards">
+<% @list.bookmarks.each do |bookmark| %>
+<div class="card-trip">
+ <%= image_tag bookmark.movie.poster_url, alt: "Le Wagon" %>
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= bookmark.movie.title %></h2>
+      <p><%= bookmark.movie.overview %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= bookmark.movie.rating %></h2>
+    <%= link_to "Delete",
   bookmark_path(bookmark),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+  </div>
+  </div>
   <% end %>
-</ul>
-
-<%= link_to("create_bookmark", new_list_bookmark_path(@list)) %>
+</div>
+<%= link_to("Add movie", new_list_bookmark_path(@list), class: "btn btn-primary position-absolute bottom-0 end-0") %>
+</div>

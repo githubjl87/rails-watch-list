@@ -11,10 +11,11 @@
   </head>
 
   <body>
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=725&q=80'); background-size: cover; background-position: center; background-position: center top">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon position-relative" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=725&q=80'); background-size: cover; background-position: center; background-position: center top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="">
-<i class="fa-solid fa-film fa-beat fa-2xl" style="color: #cb0606;"></i>
+    <%# <a class="navbar-brand" href=""> %>
+<%= link_to(raw("<i class='fa-solid fa-film fa-beat fa-2xl' style='color: #cb0606;'></i>"), lists_path, class: "navbar-brand") %>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,7 +23,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
-          <%= link_to "+Add a new list", new_list_path, class: "btn btn-primary" %>
+          <%= link_to "Add New Movie List", new_list_path, class: "btn btn-dark position-absolute bottom-0 end-0" %>
           </li>
 
           <li class="nav-item dropdown">
