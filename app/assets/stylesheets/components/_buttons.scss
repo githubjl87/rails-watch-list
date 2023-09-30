@@ -10,13 +10,16 @@ color: white;
 }
 
 .movie-delete-btn {
-  // z-index: 10;
+  z-index: 10;
   // position: absolute;
   // top: 0;
   // right: 10px;
-  // opacity: .3;
-  font-size: 30px;
+  opacity: .3;
+  font-size: 15px;
   transition: .3s;
   text-decoration: none;
-color: rgb(0, 0, 0);
+}
+
+.movie-delete-btn:hover {
+  opacity: 1;
 }

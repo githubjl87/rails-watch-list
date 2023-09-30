@@ -1,5 +1,5 @@
 
-<h1><%= @list.name  %></h1>
+<h1 class="text-center m-5"><%= @list.name  %></h1>
 <div class="position-relative pb-5 mb-5 container ">
 <div class= "cards row">
 <% @list.bookmarks.each do |bookmark| %>
@@ -29,7 +29,7 @@
   <%= f.submit class: 'btn btn-primary position-absolute bottom-0 end-0' %>
 
 <% end %>
-  <%= link_to("<- Go Back", lists_path, class: 'btn btn-primary position-absolute bottom-0 start-0') %>
+  <%= link_to("<- Go Back", lists_path, class: 'btn btn-outline-dark position-absolute bottom-0 start-0') %>
 
 <%#= link_to("Add movie", new_list_bookmark_path(@list)) %>
 </div>
